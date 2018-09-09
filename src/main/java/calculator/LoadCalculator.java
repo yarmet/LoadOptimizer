@@ -7,7 +7,7 @@ import java.util.function.Function;
 
 public class LoadCalculator<T> {
 
-    private boolean bestNodeFound = false;
+    private boolean resultAchieved = false;
     private Node bestNode = null;
     private int load;
     private List<T> data;
@@ -31,13 +31,13 @@ public class LoadCalculator<T> {
             if (bestNode == null || bestNode.getNodeTotalCost() < currentNode.getNodeTotalCost())
                 bestNode = currentNode; // если текущая нода лучше прежней, то запоминаем ее.
             if (currentNode.getNodeTotalCost() == load)
-                bestNodeFound = true; // результат достигнут
+                resultAchieved = true; // результат достигнут
         }
 
         int startPos = currentNode == null ? 0 : currentNode.getIdx() + 1;
 
         for (int i = startPos; i < data.size(); i++) {
-            if (bestNodeFound) return;
+            if (resultAchieved) return;
             Node node1 = new Node(currentNode, i, performanceExtractor.apply(data.get(i)));
             process(node1);
         }
