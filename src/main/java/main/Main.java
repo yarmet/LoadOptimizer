@@ -1,21 +1,21 @@
 package main;
 
-import calculator.Calculator;
+import calculator.SequenceSearcher;
 import calculator.SequenceFastSearcher;
-import calculator.ShortSequenceFinder;
+import calculator.ShortSequenceSearcher;
 
 public class Main {
 
     public static void main(String[] args) {
         InputParams inputParams = Parser.parse();
-        Calculator<Integer> calculator;
+        SequenceSearcher<Integer> sequenceSearcher;
 
         if (inputParams.isNeedShortSequence()) {
-            calculator = new ShortSequenceFinder<>(inputParams.getTotal(), inputParams.getValues(), Integer::intValue);
+            sequenceSearcher = new ShortSequenceSearcher<>(inputParams.getTotal(), inputParams.getValues(), Integer::intValue);
         } else {
-            calculator = new SequenceFastSearcher<>(inputParams.getTotal(), inputParams.getValues(), Integer::intValue);
+            sequenceSearcher = new SequenceFastSearcher<>(inputParams.getTotal(), inputParams.getValues(), Integer::intValue);
         }
-        System.out.println("Результат : " + calculator.calculate());
+        System.out.println("Результат : " + sequenceSearcher.calculate());
 
 
 //        int total = 110;
@@ -25,7 +25,7 @@ public class Main {
 //        workerList.add(new Worker("safd4", 23));
 //        workerList.add(new Worker("safd5", 63));
 //
-//        Calculator<Worker> calculator1 = new ShortSequenceFinder<>(total, workerList, Worker::getPerformance);
+//        SequenceSearcher<Worker> calculator1 = new ShortSequenceSearcher<>(total, workerList, Worker::getPerformance);
 //        System.out.println(calculator1.calculate());
     }
 }

@@ -3,7 +3,7 @@ package calculator;
 import java.util.List;
 import java.util.function.Function;
 
-public class SequenceFastSearcher<T> extends Calculator<T> {
+public class SequenceFastSearcher<T> extends SequenceSearcher<T> {
 
     public SequenceFastSearcher(int load, List data, Function<T, Integer> performanceExtractor) {
         super(load, data, performanceExtractor);

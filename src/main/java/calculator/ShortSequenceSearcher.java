@@ -3,9 +3,9 @@ package calculator;
 import java.util.List;
 import java.util.function.Function;
 
-public class ShortSequenceFinder<T> extends Calculator<T> {
+public class ShortSequenceSearcher<T> extends SequenceSearcher<T> {
 
-    public ShortSequenceFinder(int load, List<T> data, Function<T, Integer> performanceExtractor) {
+    public ShortSequenceSearcher(int load, List<T> data, Function<T, Integer> performanceExtractor) {
         super(load, data, performanceExtractor);
     }
 
