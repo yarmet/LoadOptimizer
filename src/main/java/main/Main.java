@@ -1,4 +1,4 @@
-package tst;
+package main;
 
 import calculator.Calculator;
 import calculator.SequenceFastSearcher;

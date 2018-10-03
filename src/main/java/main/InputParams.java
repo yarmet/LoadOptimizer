@@ -1,4 +1,4 @@
-package tst;
+package main;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
