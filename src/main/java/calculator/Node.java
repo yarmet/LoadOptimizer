@@ -3,11 +3,12 @@ package calculator;
 import lombok.Getter;
 
 @Getter
-class Node {
+public class Node {
 
     private Node parent;
     private int idx;
     private int nodeTotalCost;
+    private int nodeLength;
 
     public Node(Node parent, int idx, int cost) {
         this.parent = parent;
@@ -15,8 +16,10 @@ class Node {
 
         if (parent == null) {
             this.nodeTotalCost = cost;
+            this.nodeLength = 1;
         } else {
             this.nodeTotalCost = cost + parent.nodeTotalCost;
+            this.nodeLength = parent.nodeLength + 1;
         }
     }
 
