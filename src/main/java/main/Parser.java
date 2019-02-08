@@ -48,11 +48,11 @@ public class Parser {
 
 
     private static List<Integer> getSequence(Scanner scanner) {
-        System.out.println("Введи числа через пробел, из которых нужно добрать число");
+        System.out.println("Введи числа через запятую, из которых нужно добрать число");
         List<Integer> integerList = null;
         boolean askAgain = true;
         do {
-            String[] total = scanner.nextLine().split(" ");
+            String[] total = scanner.nextLine().replace(" ", "").split(",");
             try {
                 integerList = new ArrayList<>();
                 for (String str : total) {
@@ -60,7 +60,7 @@ public class Parser {
                 }
                 askAgain = false;
             } catch (NumberFormatException e) {
-                System.out.println("Ошибка, неправильно введены числа, нужно ввести целые числа через пробел, попробуй еще раз");
+                System.out.println("Ошибка, неправильно введены числа, нужно ввести целые числа через запятую, попробуй еще раз");
             }
         } while (askAgain);
         return integerList;

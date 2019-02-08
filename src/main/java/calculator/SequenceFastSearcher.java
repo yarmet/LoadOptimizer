@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 public class SequenceFastSearcher<T> extends SequenceSearcher<T> {
 
-    public SequenceFastSearcher(int load, List data, Function<T, Integer> performanceExtractor) {
+    public SequenceFastSearcher(int load, List<T> data, Function<T, Integer> performanceExtractor) {
         super(load, data, performanceExtractor);
     }
 
